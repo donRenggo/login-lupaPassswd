@@ -1,0 +1,60 @@
+<?if($this->session->userdata('iakun')){redirect('./');return;}?>
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Login</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="Shortcut Icon" href="<?=base_url()?>images/logo.png" type="image/x-icon">
+
+    <?echo '<script> var base = "'.base_url().'"</script>';?>
+    <script src="<?=base_url()?>lib/jquery-3.3.1.min.js" /></script>
+    <script src="<?=base_url()?>lib/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="<?=base_url()?>lib/jquery-ui.min.css" />
+    <link rel="stylesheet" href="<?=base_url()?>lib/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+    <script src="<?=base_url()?>lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+</head>
+
+<body align="">       
+<div class="container">
+<br><br><br>
+ <div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4" style="border:1px solid grey;border-radius:5pt;">
+   <div id="login-form">
+    <center><?=img(  array('src'=>'images/logo.png','width'=>'','class'=>'img img-responsive'))?></center>
+   <?=form_open('login/act', 'id="allForm" ling-sukses="daftar"')?>
+    <p>
+    <div class="err" id="userid"><?=form_error('userid')?></div>
+    <input type="" name="userid" class="form-control" placeholder="Email" />
+   </p>
+    <p>
+     <div class="err" id="passwd"><?=form_error('passwd')?></div>
+     <input type="password" name="passwd" class="form-control" placeholder="Password" />
+    </p>
+    <p align="right">
+    <!--
+     <span data-toggle="modal" data-target="#myModal" id="info-login" style="font-size: 15px;color: ;cursor: pointer ">Lupa Password </span> &nbsp;| &nbsp;
+    /-->
+     <input type="submit" class="btn btn-primary" value="Login" /> &nbsp;&nbsp;
+     <span class="glyphicon glyphicon-hand-right"></span> <?=anchor('login/daftar','Daftar','class=""')?>
+     <br>
+     <?=anchor('login/forgot/', 'Lupa sandi')?>
+    </p>
+
+    </form>
+   </div>
+  </div>
+  <div class="col-sm-4"></div>
+ </div>
+</div>
+    <link rel="stylesheet" href="<?=base_url()?>lib/all.css" />
+    <script src="<?=base_url()?>lib/all.js"></script>
+    <script src="<?=base_url()?>lib/form-act.js"></script>
+</body>
+</html>
